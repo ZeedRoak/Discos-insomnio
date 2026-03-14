@@ -7,7 +7,6 @@
 /*----------------variables---------------------*/
 :root{
   --color-acento: #dc3545;
-  background-color: black;
 }
 
 /* LAYOUT */
@@ -107,6 +106,9 @@ header {
 
 .producto{
   animation: fadeInUp 0.6s ease;
+}
+.card-hover:hover .btn{
+  transform: scale(1.05);
 }
 
 .modal-producto{
