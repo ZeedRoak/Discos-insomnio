@@ -1,3 +1,4 @@
+//filtro
 const botones = document.querySelectorAll(".filtro-btn");
 const productos = document.querySelectorAll(".producto");
 
@@ -28,6 +29,7 @@ botones.forEach(boton => {
 
 });
 
+// MODAL
 function abrirModal(src){
   const modal = document.getElementById("modalProducto");
   const img = document.getElementById("imgModal");
@@ -38,4 +40,19 @@ function abrirModal(src){
 
 function cerrarModal(){
   document.getElementById("modalProducto").style.display = "none";
+}
+
+//HERO
+const backgrounds = document.querySelectorAll(".hero-bg");
+
+if (backgrounds.length >0){
+  let index = 0;
+
+  setInterval(() => {
+    backgrounds[index].classList.remove("active");
+    index = (index + 1) % backgrounds.length;
+    backgrounds[index].classList.add("active");
+  }, 4000);
+  console.log(backgrounds);
+  
 }
