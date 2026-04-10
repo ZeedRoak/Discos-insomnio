@@ -56,3 +56,33 @@ if (backgrounds.length >0){
   console.log(backgrounds);
   
 }
+
+//FORM
+
+(function(){
+  emailjs.init("dM55GP0PJyb0RHOLg");
+})();
+
+document.getElementById("form-contacto").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const nombre = document.getElementById("nombre").value;
+  const email = document.getElementById("email").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  if(!nombre || !email || !mensaje){
+    alert("Completá todos los campos");
+    return;
+  }
+
+  emailjs.send("service_e5vjz92", "template_en3wvzk", {
+    from_name: nombre,
+    from_email: email,
+    message: mensaje
+  })
+  .then(function(){
+    alert("Mensaje enviado 🔥");
+  }, function(){
+    alert("Error al enviar 😢");
+  });
+});
